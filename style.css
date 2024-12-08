@@ -50,7 +50,7 @@ nav{
     position: fixed;
     z-index: 90;
     top: 0;
-    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
     border-bottom: .5px solid var(--gradient-2);
 }
 
@@ -71,6 +71,7 @@ nav{
     background: var(--bg-color);
     color: var(--text-color);
 }
+
 .nav__menu:hover{
    color: var(--gradient-start);
 }
@@ -91,7 +92,6 @@ nav{
 
 
 /*=================================== BADGE ================================*/
-
 .badge {
     display: flex;
     flex-direction: column;
@@ -101,7 +101,6 @@ nav{
     height: 490px; 
     background: linear-gradient(to top, var(--bg-color), var(--color-gray));
     border-radius: 15px;
-    border: 8px solid var(--text-color);
     box-shadow: 0 4px 8px rgba(255,255,255, 0.5);
     position: absolute;
     top: 50%;
@@ -174,8 +173,8 @@ nav{
 
 /*=================================== JUMPING DIRECTION ================================*/
 
- .jumping-icon {
-    position: fixed;          
+.jumping-icon {
+    position: absolute;          
     bottom: 10px;         
     left: 50%;                /* Center the icon horizontally */
     transform: translateX(-50%); /* Center it properly */
@@ -195,3 +194,6 @@ nav{
         transform: translateX(-50%) translateY(0);
     }
 }
+
+/*=================================== GATEGORIES ================================*/
+
