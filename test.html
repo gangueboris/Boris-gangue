@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Icon Example</title>
+    <link href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" rel="stylesheet"> <!-- IconScout CSS -->
+    <style>
+        /* Container for the icon */
+        .jumping-icon {
+            position: fixed;          /* Fix the icon at the bottom of the page */
+            bottom: 20px;             /* Adjust this to control how far from the bottom */
+            left: 50%;                /* Center the icon horizontally */
+            transform: translateX(-50%); /* Center it properly */
+            font-size: 50px;          /* Adjust icon size */
+            color: #0072ff;           /* Set icon color */
+            animation: jump 1s infinite; /* Apply the jumping animation */
+        }
+
+        /* Keyframes for jumping animation */
+        @keyframes jump {
+            0% {
+                transform: translateX(-50%) translateY(0);
+            }
+            50% {
+                transform: translateX(-50%) translateY(-20px); /* Jumping effect */
+            }
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Jumping Icon -->
+    <i class="uil uil-arrow-down jumping-icon"></i> <!-- Icon from IconScout (Unicons) -->
+
+</body>
+</html>

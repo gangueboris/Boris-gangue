@@ -1,0 +1,197 @@
+/*==================================Setting css variables =================================*/
+
+:root{
+    --bg-color: #13151a;
+    --text-color: #e6e6e6;
+    --color-gray: #231cfebe;
+    --color-gray-2: #edd81312;
+    /* Gradient flow from top to bottom */
+    --gradient-start: #00E5FF;     /* Cyan - Start */
+    --gradient-2: #33EADB;         /* Cyan -> Mint */
+    --gradient-3: #66F0B8;         /* Mint -> Green */
+    --gradient-ui: #98F595;        /* Middle point - Used for UI */
+    --gradient-5: #CCFA72;         /* Green -> Yellow */
+    --gradient-6: #FFE573;         /* Yellow -> Gold */
+    --gradient-end: #FFCC50;       /* Gold - End */
+    --glass-bg: rgba(19, 21, 26, 0.7);
+    --code-font: 'JetBrains Mono', monospace;
+    --transition: transform 0.3s ease;
+}
+
+/*=================================== GENERAL ================================*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-style: none;
+    list-style: none;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--code-font);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1600px;
+    margin-inline:auto;
+    padding: 2.5rem 5rem;
+}
+
+
+/*=================================== NAVBAR ================================*/
+nav{
+    width: 100vw;
+    height: 5rem;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.);
+    border-bottom: .5px solid var(--gradient-2);
+}
+
+
+.nav__container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__container span {
+    color: var(--gradient-start);
+}
+
+.nav__menu{
+    font-size: 2rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+.nav__menu:hover{
+   color: var(--gradient-start);
+}
+
+.nav__notification{
+    width: fit-content;
+    background: var(--color-gray-2);
+    color:  var(--gradient-end);
+    border: .5px solid var(--gradient-end);
+    padding: 2px .7rem;
+    border-radius: 10px;
+    z-index: 100;
+    position: absolute;
+    left: 50%;     /* Move the element's left edge to 50% of the viewport */
+    transform: translateX(-50%);   /* Shift it back by 50% of its own width */  
+
+}
+
+
+/*=================================== BADGE ================================*/
+
+.badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px; 
+    height: 490px; 
+    background: linear-gradient(to top, var(--bg-color), var(--color-gray));
+    border-radius: 15px;
+    border: 8px solid var(--text-color);
+    box-shadow: 0 4px 8px rgba(255,255,255, 0.5);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(10deg); /* Initial tilt */
+    transition: var(--transition); /* Smooth transition */
+}
+
+.badge__profile{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+.badge__container{
+    height: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.badge__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.badge__info-title h1{
+    text-align: center;
+    font-size: 2rem;
+}
+
+.badge__info-title p{
+    text-align: center;
+    font-size: .9rem;
+}
+.badge__content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-top: 1rem;
+    font-size: .8rem;
+}
+
+.badge__content-info a{
+    color: var(--text-color);
+    background: var(--color-gray-2);
+    padding: 1px 5px;
+}
+
+.badge__qrcode img{
+    height: 65px;
+    width: 65px;
+    border-radius: 10px;
+}
+/* Hover Animations */
+.badge:hover {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05); /* Slightly rotate and scale */
+}
+
+.badge:hover:active {
+    transform: translate(-50%, -50%) rotate(0deg); /* Reset rotation when clicked */
+}
+
+/*=================================== JUMPING DIRECTION ================================*/
+
+ .jumping-icon {
+    position: fixed;          
+    bottom: 10px;         
+    left: 50%;                /* Center the icon horizontally */
+    transform: translateX(-50%); /* Center it properly */
+    font-size: 50px;         
+    color: var(--gradient-start);           
+    animation: jump 1.5s infinite; /* Apply the jumping animation */
+}
+
+@keyframes jump {
+    0% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-20px); /* Jumping effect */
+    }
+    100% {
+        transform: translateX(-50%) translateY(0);
+    }
+}
