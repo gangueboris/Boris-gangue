@@ -42,7 +42,7 @@ button{
 .container {
     max-width: 1600px;
     margin-inline:auto;
-    padding: 2.5rem 5rem;
+    width: 900px;
 }
 
 
@@ -213,6 +213,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+ 
 }
 
 .categories__container button{
@@ -249,9 +250,10 @@ nav{
 /*=================================== FOOTER ================================*/
 footer{
     margin: 3rem 0 7rem 0;
-    border-top: 2px solid var(--gradient-2);
 }
 .footer__container{
+    padding-top: 2rem;
+    border-top: 2px solid var(--gradient-2);
     display: flex;
     justify-content: center;
     align-items: center;
