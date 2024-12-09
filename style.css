@@ -118,6 +118,14 @@ nav{
     transform: translate(-50%, -50%) rotate(10deg); /* Initial tilt */
     transition: var(--transition); /* Smooth transition */
 }
+/* Hover Animations */
+.badge:hover {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05); /* Slightly rotate and scale */
+}
+
+.badge:hover:active {
+    transform: translate(-50%, -50%) rotate(0deg); /* Reset rotation when clicked */
+}
 
 .badge__profile{
     width: 150px;
@@ -170,14 +178,6 @@ nav{
     height: 65px;
     width: 65px;
     border-radius: 10px;
-}
-/* Hover Animations */
-.badge:hover {
-    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05); /* Slightly rotate and scale */
-}
-
-.badge:hover:active {
-    transform: translate(-50%, -50%) rotate(0deg); /* Reset rotation when clicked */
 }
 
 /*=================================== JUMPING DIRECTION ================================*/
@@ -257,6 +257,8 @@ nav{
 
 .projects__{
     border-top: 2px solid var(--gradient-2);
+    margin-bottom: 5rem;
+    position: relative;
 }
 .projects__ h1{
    text-align: center;
@@ -264,7 +266,7 @@ nav{
    font-size: 2rem;
    left: 50%;
    transform: translateX(-50%);
-   top: -5%;
+   top: -3%;
    z-index: 2;
    background: var(--bg-color);
    padding: 0 1rem;
@@ -273,18 +275,48 @@ nav{
 
 .projects__content{
     margin-top: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    gap: 1rem;
 }
 
 .project{
     height: 500px;
     width: 390px;
-    border-radius: 10px;
-    background: red;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects__2024 .project:nth-child(1){
+    background: url('images/btc_2024.jpg') no-repeat center center;
+    background-size: cover;  /* Scales the image to cover the container */
+}
+
+.projects__2024 .project:nth-child(2){
+    background: url('images/aoc_2024.png') no-repeat center center;
+    background-size: cover;  
+}
+
+.projects__2024 .project:nth-child(3){
+    background: url('images/blog.png') no-repeat center center;
+    background-size: cover;
+}
+
+.projects__2023 .project:nth-child(1){
+    background: url('images/sort_visualizer.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.projects__2023 .project:nth-child(2){
+    background: url('images/projet_cir1.png') no-repeat center center;
+    background-size: cover;
+}
+
+.projects__2023 .project:nth-child(3){
+    background: url('images/aoc_2023.png') no-repeat center center;
+    background-size: cover;
 }
 
 .project__header{
@@ -293,21 +325,33 @@ nav{
     align-items: center;
     justify-content: space-between;
     padding: .7rem .7rem;
-    background: transparent;
+    background: rgba(19, 21, 26, 0.7); 
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+
 }
-.project__header:hover{
-    background: #000;
-    transition: all ease .5s
+.project__header:hover {
+    background: #000; 
 }
+.project__header:hover + .project__info{
+    max-height: 500px;  
+    opacity: 1;        
+    transform: translateY(0); /* Reset position */
+}
+
 .project__header i{
     font-size: 1.6rem;
     cursor: pointer;
 }
 .project__info{
     padding: .7rem .7rem;
-    overflow: hidden;
-    background: rgba(19, 21, 26, 0.7); /* Darker background */
+    background: rgba(19, 21, 26, 0.7); 
     backdrop-filter: blur(10px);
+    max-height: 0;        
+    opacity: 0;             
+    overflow: hidden;       
+    transform: translateY(-20px);
+    transition: all 0.5s ease .1s;
 }
 .project__info > div {
     display: flex;
@@ -354,4 +398,72 @@ footer{
 }
 .footer__container ul li a{
     color: var(--text-color);
+}
+
+/*=================================== MEDIA QUERIES MOBILE ================================*/
+@media screen and (max-width: 600px){
+
+/*=================================== GENERAL ================================*/
+.container {
+    font-size: .7rem;
+    margin-inline:auto;
+    width: 88%;
+}
+
+
+/*=================================== NAV ================================*/
+.nav__menu{
+    font-size: 1.5rem;
+}
+
+.nav__notification{
+    font-size: .9rem;
+}
+
+/*=================================== BADGE ================================*/
+
+.badge{
+    width: 300px; 
+    height: 450px; 
+    transform: translate(-50%, -50%) rotate(8deg); /* Initial tilt */
+    transition: var(--transition); /* Smooth transition */
+}
+/* Hover Animations */
+.badge:hover {
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05); /* Slightly rotate and scale */
+}
+
+.badge:hover:active {
+    transform: translate(-50%, -50%) rotate(0deg); /* Reset rotation when clicked */
+}
+
+.badge__qrcode img{
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+/*=================================== GATEGORIES ================================*/
+
+.categories__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+ 
+}
+.categories__container button{
+    font-size: .7rem;
+
+}
+/*=================================== PROJECTS ================================*/
+    .projects__content{
+        grid-template-columns: 1fr;
+    }
+
+    .project{
+        width: 300px;
+        height: 400px;
+    }
+
 }
