@@ -447,7 +447,6 @@ footer{
 /*=================================== BADGE ================================*/
 
 .badge{
-    margin-top: 2rem;
     width: 290px; 
     height: 430px; 
     transform: translate(-50%, -50%) rotate(8deg); /* Initial tilt */
