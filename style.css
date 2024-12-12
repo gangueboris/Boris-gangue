@@ -5,6 +5,7 @@
     --text-color: #e6e6e6;
     --color-gray: #231cfebe;
     ---color-gray-2: #a39d9d;
+    --color-gray-3: 161D6F;
     --color-belge:rgb(255 237 213);
     /* Gradient flow from top to bottom */
     --gradient-start: #00E5FF;     /* Cyan - Start */
@@ -74,6 +75,7 @@ nav{
     color: var(--gradient-start);
 }
 
+
 .nav__menu{
     font-size: 2rem;
     background: var(--bg-color);
@@ -87,6 +89,7 @@ nav{
 .nav__notification{
     width: fit-content;
     color:  var(--gradient-6);
+    background: var(--color-gray);
     border: .5px solid var(--gradient-end);
     padding: 2px .7rem;
     border-radius: 10px;
@@ -178,7 +181,7 @@ nav{
 
 .badge__content-info a{
     color: var(--text-color);
-    background: var(--color-gray-2);
+    background: var(--color-gray-3);
     padding: 1px 5px;
 }
 
@@ -304,7 +307,7 @@ nav{
 }
 
 .projects__2024 .project:nth-child(2){
-    background: url('images/aoc_2024.png') no-repeat center center;
+    background: url('images/aoc.jpeg') no-repeat center center;
     background-size: cover;  
 }
 
@@ -429,12 +432,18 @@ footer{
 
 
 /*=================================== NAV ================================*/
+.nav__container{
+    padding: 0 1.7rem;
+}
 .nav__menu{
-    font-size: 1.5rem;
+    font-size: 1.4rem;
+   
 }
 
 .nav__notification{
-    font-size: .9rem;
+    font-size: .7rem;
+    width: 7rem;
+  
 }
 
 /*=================================== BADGE ================================*/
@@ -489,17 +498,17 @@ footer{
 }
 .categories__container button{
     font-size: .7rem;
-
 }
-/*=================================== PROJECTS ================================*/
+/*=================================== PROJECTS ================================*/ 
     .projects__content{
         grid-template-columns: 1fr;
-    
     }
 
     .project{
         width: 350px;
         height: 500px;
     }
+
+    
 
 }

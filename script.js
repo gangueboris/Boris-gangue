@@ -1,7 +1,10 @@
 
+let navbar = document.querySelector("nav");
+let projectHeader = document.querySelector(".project__header");
+let projectInfo = document.querySelector(".project__info");
+
 // ======================= NAV BACKGROUND TRANSPARENT ====================================
 window.addEventListener("scroll", () => {
-    const navbar = document.querySelector("nav");
     if (window.scrollY > 50) {
         navbar.classList.add("scrolled");  // Add class when scrolling down
     } else {
@@ -10,7 +13,8 @@ window.addEventListener("scroll", () => {
 });
 
 
-    // Three.js background
+
+    /*// Three.js background
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
@@ -107,4 +111,4 @@ window.addEventListener("scroll", () => {
         renderer.render(scene, camera);
     }
 
-    animate();
+    animate();*/
