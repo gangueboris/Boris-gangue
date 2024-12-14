@@ -1,8 +1,9 @@
-# Boris-s-Portfolio
-This is my portfolio
+# Boris' Portfolio
+The portfolio is currently under construction.
+More features will be added soon:
+- My resume
+- My toolbox
+- Project animations
+- Scroll effects
 
-
-
-
-4. On mobile, change the hover to the click
-5. Make verification on the descrition
+You can visite it here [Boris's Portfolio](https://borisgangue.dev)
