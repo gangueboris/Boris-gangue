@@ -7,4 +7,7 @@ More features will be added soon:
 - Project animations
 - Scroll effects
 
+=========================== TO DO ===========================
+- Implement the overlay menu
+
 You can visite it here [Boris's Portfolio](https://borisgangue.dev)

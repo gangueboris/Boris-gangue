@@ -1,16 +1,56 @@
 
-let navbar = document.querySelector("nav");
-let projectHeader = document.querySelector(".project__header");
-let projectInfo = document.querySelector(".project__info");
+// Get elements
+// == Navbar == //
+const navbar = document.querySelector("nav");
+const projectHeader = document.querySelector(".project__header");
+const projectInfo = document.querySelector(".project__info");
+const body = document.querySelector("body");
+
+// == ToolBox == //
+const navMenu = document.querySelector(".nav__menu");
+const toolBox = document.querySelector(".menu-overlay__section");
+const toolBoxCloseBtn = document.querySelector(".close__btn");
+
 
 // ======================= NAV BACKGROUND TRANSPARENT ====================================
 window.addEventListener("scroll", () => {
     if (window.scrollY > 50) {
         navbar.classList.add("scrolled");  // Add class when scrolling down
-    } else {
+    }else{
         navbar.classList.remove("scrolled");  // Remove class when scrolling up
     }
 });
+
+
+
+// ======================= TOOLBOX OVERLAY ====================================
+navMenu.addEventListener("click", () => {
+    toolBox.classList.toggle('active');
+    body.classList.toggle('no-scroll');
+});
+
+toolBoxCloseBtn.addEventListener("click", () => {
+    toolBox.classList.remove('active');
+    body.classList.remove('no-scroll');
+});
+
+ // Close the menu when clicking outside
+ toolBox.addEventListener('click', (e) => {
+    if (e.target === toolBox){
+        toolBox.classList.remove('active');
+        body.classList.remove('no-scroll');
+    }
+  });
+
+
+
+
+
+
+
+
+
+
 
 
 
