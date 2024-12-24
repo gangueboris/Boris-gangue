@@ -7,6 +7,16 @@
     ---color-gray-2: #a39d9d39;
     --color-gray-3: 161D6F;
     --color-belge:rgb(255 237 213);
+    --color-blue-light: #DBEAFE;
+    --color-blue: #3B82F6;
+    --color-green-light:#DCFCE7;
+    --color-green: #22C55E;
+    --color-yellow-light:#FFEDD5;
+    --color-yellow:#F97A21;
+    --color-red-light: #FEE2E2; 
+    --color-red: #EF4444;
+
+
     /* Gradient flow from top to bottom */
     --gradient-start: #00E5FF;     /* Cyan - Start */
     --gradient-2: #33EADB;         /* Cyan -> Mint */
@@ -173,6 +183,61 @@ body.no-scroll {
     width:6rem;
     height: 6rem;
     border-radius: .5rem;
+}
+
+@keyframes questionMarkMotion {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-10deg); 
+    }
+    50% {
+        transform: rotate(10deg); 
+    }
+    75% {
+        transform: rotate(-5deg); 
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+
+.menu-overlay__box:nth-child(1) a{
+    background: var(--color-blue-light);
+    color: var(--color-blue);
+    border: 1px solid var(--color-blue);
+}
+
+.menu-overlay__box:nth-child(2) a{
+    background: var(--color-yellow-light);
+    color: var(--color-yellow);
+    border: 1px solid var(--color-yellow);
+}
+
+.menu-overlay__box:nth-child(3) a{
+    background: var(--color-green-light);
+    color: var(--color-green);
+    border: 1px solid var(--color-green);
+}
+
+.menu-overlay__box:nth-child(1) a:hover {
+    border: 3px solid var(--color-blue);
+    animation: questionMarkMotion 0.8s ease-in-out; 
+    transition: var(--transition); 
+}
+
+.menu-overlay__box:nth-child(2) a:hover {
+    border: 3px solid var(--color-yellow);
+    animation: questionMarkMotion 0.8s ease-in-out; 
+    transition: var(--transition); 
+}
+
+.menu-overlay__box:nth-child(3) a:hover {
+    border: 3px solid var(--color-green);
+    animation: questionMarkMotion 0.8s ease-in-out; 
+    transition: var(--transition); 
 }
 
 
@@ -518,8 +583,15 @@ footer{
 
 .nav__notification{
     font-size: .7rem;
-    width: 7rem;
-  
+}
+
+/*=================================== TOOLBOX ================================*/
+.menu-overlay__container{
+    width: 400px;
+    height: 600px;
+}
+.menu-overlay__grid{
+    grid-template-columns: repeat(3, 1fr);
 }
 
 /*=================================== BADGE ================================*/
