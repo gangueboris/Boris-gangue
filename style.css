@@ -108,7 +108,6 @@ nav{
     top:4rem;
     left: 50%;     /* Move the element's left edge to 50% of the viewport */
     transform: translateX(-50%);   /* Shift it back by 50% of its own width */  
-
 }
 
 /*=================================== MENU OVERLAY ================================*/
@@ -583,7 +582,6 @@ footer{
 
 .nav__notification{
     font-size: .7rem;
-    width: fit-content;
 }
 
 /*=================================== TOOLBOX ================================*/
