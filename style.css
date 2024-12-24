@@ -583,6 +583,7 @@ footer{
 
 .nav__notification{
     font-size: .7rem;
+    width: fit-content;
 }
 
 /*=================================== TOOLBOX ================================*/
