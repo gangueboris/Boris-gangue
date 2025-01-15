@@ -473,16 +473,21 @@ body.no-scroll {
 }
 
 .projects__2023 .project:nth-child(1){
-    background: url('images/sort_visualizer.jpg') no-repeat center center;
+    background: url('images/sort_visualizer.gif') no-repeat center center;
     background-size: cover;
+    
 }
 
 .projects__2023 .project:nth-child(2){
-    background: url('images/projet_cir1.png') no-repeat center center;
+    background: url('images/roachy.gif') no-repeat center center;
     background-size: cover;
 }
 
 .projects__2023 .project:nth-child(3){
+    background: url('images/projet_cir1.png') no-repeat center center;
+    background-size: cover;
+}
+.projects__2023 .project:nth-child(4){
     background: url('images/aoc_2023.png') no-repeat center center;
     background-size: cover;
 }
