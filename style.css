@@ -271,12 +271,13 @@ body.no-scroll {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%) rotate(10deg); /* Initial tilt */
+    transform: translate(-50%, -50%) rotate(4deg); /* Initial tilt */
     transition: var(--transition); /* Smooth transition */
 }
 /* Hover Animations */
 .badge:hover {
-    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05); /* Slightly rotate and scale */
+  
+    transform: translate(-50%, -50%) rotate(-5deg) scale(1.05);  /*Slightly rotate and scale */
 }
 
 .badge:hover:active {
@@ -348,7 +349,7 @@ body.no-scroll {
     position: absolute;          
     bottom: 10px;         
     left: 50%;                /* Center the icon horizontally */
-    transform: translateX(-50%); /* Center it properly */
+    /*transform: translateX(-50%); /*Center it properly */
     font-size: 50px;         
     color: var(--gradient-start);           
     animation: jump 1.5s infinite; /* Apply the jumping animation */
@@ -524,6 +525,7 @@ body.no-scroll {
    color: var(--text-color);
 }
 .project__info{
+    position: relative;
     padding: .7rem .7rem;
     background: rgba(19, 21, 26, 0.7); 
     backdrop-filter: blur(10px);
@@ -552,6 +554,23 @@ body.no-scroll {
 }
 .project__info p{
     margin-top: .5rem;
+}
+.first-place-container {
+    background: var(--color-yellow-light);
+    color: var(--color-yellow);
+    height: 50px;
+    width: 8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--color-yellow);
+    font-weight: bold;
+    font-size: 1.1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 /*=================================== FOOTER ================================*/
 footer{
