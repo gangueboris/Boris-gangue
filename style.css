@@ -471,6 +471,10 @@ body.no-scroll {
     background: url('images/crao_2024.jpg') no-repeat center center;
     background-size: cover;
 }
+.projects__2024 .project:nth-child(5){
+    background: url('images/projet_cir1.png') no-repeat center center;
+    background-size: cover;
+}
 
 .projects__2023 .project:nth-child(1){
     background: url('images/sort_visualizer.gif') no-repeat center center;
@@ -484,13 +488,13 @@ body.no-scroll {
 }
 
 .projects__2023 .project:nth-child(3){
-    background: url('images/projet_cir1.png') no-repeat center center;
-    background-size: cover;
-}
-.projects__2023 .project:nth-child(4){
     background: url('images/aoc_2023.png') no-repeat center center;
     background-size: cover;
 }
+/*.projects__2023 .project:nth-child(4){
+    background: url('images/aoc_2023.png') no-repeat center center;
+    background-size: cover;
+}*/
 
 .project__header{
     border-radius: 10px 10px 0 0;
