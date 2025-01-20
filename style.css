@@ -600,7 +600,7 @@ footer{
 }
 
 /*=================================== MEDIA QUERIES MOBILE ================================*/
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
 
 /*=================================== GENERAL ================================*/
 .container {
@@ -696,6 +696,12 @@ footer{
         height: 500px;
     }
 
-    
-
+    .projects__ h1 {
+        margin-top:3rem;
+    }
 }
+
+.categories__recent {
+  
+}
+
