@@ -17,6 +17,7 @@
             <div class="nav__links">
                 <a data-target="home" class="scroll-link active">Home</a>
                 <a data-target="projects" class="scroll-link">Projects</a>
+                <a data-target="contact" class="scroll-link">Contact</a>
                 <!--<a data-target="timeline" class="scroll-link">Timeline</a>-->
             </div>
             <button class="nav__menu"><i class="uil uil-apps"></i></button>
@@ -82,7 +83,7 @@
    
     <!--========================================= Profile Badge =======================================-->
     <canvas id="background-canvas" data-engine="three.js r160"></canvas>
-    <section class="badge__section" id="home">
+    <section class="badge__section scroll-section" id="home">
         <div class="badge">
             <div class="badge__container">
                 <img class="badge__profile" src="images/boris_profile.jpg" alt="Profile Image">
@@ -113,7 +114,7 @@
 
 
     <!--==============================================  CATEGORIES =======================================-->
-    <section class="categories" id="projects">
+    <section class="categories  scroll-section" id="projects">
        <div class="categories__container container">
           <!--<div class="categories__list">
             <button>All</button>
@@ -293,10 +294,10 @@
 
     <!--==============================================  FOOTER =======================================-->
     <footer>
-        <div class="footer__container container">
+        <div class="footer__container container  scroll-section" id="contact">
             <h2>Boris Gangue<span>'s Portfolio</span></h2>
             <ul>
-                <li>Contacts</li>
+                <li>Contact</li>
                 <li><a href="mailto:gangueboris@gmail.com"><i class="uil uil-envelope"></i> gangueboris@gmail.com</a></li>
                 <li><a href="https://www.linkedin.com/in/boris-gangue-48a146285/" target="_blank"><i class="uil uil-linkedin"></i> LinkedIn</a></li>
                 <li><a href="https://github.com/gangueboris" target="_blank"><i class="uil uil-github"></i> Github</a></li>
@@ -314,6 +315,7 @@ const projectHeader = document.querySelector(".project__header");
 const projectInfo = document.querySelector(".project__info");
 const body = document.querySelector("body");
 const scrollLinks = document.querySelectorAll('.scroll-link');
+const scrollSections = document.querySelectorAll('.scroll-section');
 
 // == ToolBox == //
 const navMenu = document.querySelector(".nav__menu");
@@ -376,8 +378,35 @@ scrollLinks.forEach((link) => {
   });
 });
 
+/* === Function to update active link based on scroll position ===*/
+function updateActiveLink() {
+  let current = '';
+
+  // Loop through sections to find the one in view
+  scrollSections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+
+    if (window.scrollY >= sectionTop - (sectionHeight / 3)) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  // Update the active class
+  scrollLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('data-target') === current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+// Add scroll event listener
+window.addEventListener('scroll', updateActiveLink);
+
+
   
-    // Three.js background
+    /*============ Three.js background =================*/
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({
