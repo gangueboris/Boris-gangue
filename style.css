@@ -41,6 +41,10 @@
     font-family: var(--code-font);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     background: var(--bg-color);
     color: var(--text-color);
@@ -87,7 +91,7 @@ nav{
 
 
 .nav__menu{
-    font-size: 2rem;
+    font-size:2rem;
     background: var(--bg-color);
     color: var(--text-color);
 }
@@ -109,6 +113,29 @@ nav{
     left: 50%;     /* Move the element's left edge to 50% of the viewport */
     transform: translateX(-50%);   /* Shift it back by 50% of its own width */  
 }
+
+.nav__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 360px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+.nav__links  a{
+  cursor: pointer;
+}
+
+.nav__links  a:hover{
+    color: var(--gradient-start);
+}
+.scroll-link.active {
+    text-decoration: underline;  
+    text-decoration-color: var(--gradient-start); 
+    text-decoration-thickness: 3px; 
+    text-underline-offset: 4px;
+}
+  
 
 /*=================================== MENU OVERLAY ================================*/
 .menu-overlay__section{
@@ -410,6 +437,11 @@ body.no-scroll {
     color: var(--gradient-2);
 }
 /*=================================== PROJECTS ================================*/
+/* Extra padding to center correctly when scroll to #projects */
+#projects{
+    padding-top: 5.5rem; 
+}
+
 .projects{
     margin-top: 4rem;
 }
@@ -567,10 +599,9 @@ body.no-scroll {
     border-radius: 10px;
     border: 1px solid var(--color-yellow);
     font-weight: bold;
-    font-size: 1.1rem;
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: 10px;
+    right: 10px;
 }
 /*=================================== FOOTER ================================*/
 footer{
@@ -614,6 +645,10 @@ footer{
 .nav__container{
     padding: 0 1.7rem;
 }
+
+.nav__container h1 {
+    width: 100px;
+}
 .nav__menu{
     font-size: 1.4rem;
    
@@ -624,6 +659,10 @@ footer{
     width: 8rem;
 }
 
+.nav__links {
+    width: auto;
+    gap: 1rem;
+}
 /*=================================== TOOLBOX ================================*/
 .menu-overlay__container{
     width: 400px;
@@ -696,12 +735,9 @@ footer{
         height: 500px;
     }
 
-    .projects__ h1 {
+    .projects__2024 h1 {
         margin-top:3rem;
     }
 }
 
-.categories__recent {
-  
-}
 

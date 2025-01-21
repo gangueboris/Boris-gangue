@@ -13,7 +13,12 @@
 <body>
     <nav>
         <div class="nav__container container">
-            <h1>Boris Gangue<span>'s Portfolio</span></h1>
+            <h1>Boris<span>'s Portfolio</span></h1>
+            <div class="nav__links">
+                <a data-target="home" class="scroll-link active">Home</a>
+                <a data-target="projects" class="scroll-link">Projects</a>
+                <!--<a data-target="timeline" class="scroll-link">Timeline</a>-->
+            </div>
             <button class="nav__menu"><i class="uil uil-apps"></i></button>
         </div>
         <!--<div class="nav__notification">Website under construction</div>-->
@@ -77,7 +82,7 @@
    
     <!--========================================= Profile Badge =======================================-->
     <canvas id="background-canvas" data-engine="three.js r160"></canvas>
-    <section class="badge__section">
+    <section class="badge__section" id="home">
         <div class="badge">
             <div class="badge__container">
                 <img class="badge__profile" src="images/boris_profile.jpg" alt="Profile Image">
@@ -108,7 +113,7 @@
 
 
     <!--==============================================  CATEGORIES =======================================-->
-    <section class="categories">
+    <section class="categories" id="projects">
        <div class="categories__container container">
           <!--<div class="categories__list">
             <button>All</button>
@@ -308,6 +313,7 @@ const navbar = document.querySelector("nav");
 const projectHeader = document.querySelector(".project__header");
 const projectInfo = document.querySelector(".project__info");
 const body = document.querySelector("body");
+const scrollLinks = document.querySelectorAll('.scroll-link');
 
 // == ToolBox == //
 const navMenu = document.querySelector(".nav__menu");
@@ -345,6 +351,30 @@ toolBoxCloseBtn.addEventListener("click", () => {
     }
   });
 
+// Handle scrolling to a section
+scrollLinks.forEach((link) => {
+  link.addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default anchor link behavior
+    /*========== SMOOTH =========*/
+    // Get the target id from the data-target attribute
+    const targetId = this.getAttribute('data-target');
+
+    // Find the target element
+    const targetElement = document.getElementById(targetId);
+
+    // Scroll to the target element smoothly
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /*========== ACTIVE LINK =========*/
+    // Remove the active class from all links
+    scrollLinks.forEach((l) => l.classList.remove('active'));
+
+    // Add the active class to the clicked link
+    this.classList.add('active');
+  });
+});
 
   
     // Three.js background
