@@ -229,24 +229,34 @@ body.no-scroll {
     }
 }
 
-
+/*========= HOME =========*/
 .menu-overlay__box:nth-child(1) a{
     background: var(--color-blue-light);
     color: var(--color-blue);
     border: 1px solid var(--color-blue);
 }
 
+/*========= Resume ========*/
 .menu-overlay__box:nth-child(2) a{
     background: var(--color-yellow-light);
     color: var(--color-yellow);
     border: 1px solid var(--color-yellow);
 }
 
+/*========= SortVisual =========*/
 .menu-overlay__box:nth-child(3) a{
     background: var(--color-green-light);
     color: var(--color-green);
     border: 1px solid var(--color-green);
 }
+
+/*========= AnimeQuiz =========*/
+.menu-overlay__box:nth-child(4) a{
+    background: var(--color-red-light);
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+}
+
 
 .menu-overlay__box:nth-child(1) a:hover {
     border: 3px solid var(--color-blue);
@@ -262,6 +272,12 @@ body.no-scroll {
 
 .menu-overlay__box:nth-child(3) a:hover {
     border: 3px solid var(--color-green);
+    animation: questionMarkMotion 0.8s ease-in-out; 
+    transition: var(--transition); 
+}
+
+.menu-overlay__box:nth-child(4) a:hover {
+    border: 3px solid var(--color-red);
     animation: questionMarkMotion 0.8s ease-in-out; 
     transition: var(--transition); 
 }
@@ -484,7 +500,12 @@ body.no-scroll {
     overflow: hidden;
 }
 
-
+/*========== PROJECTS 2025 ==============*/
+.projects__2025 .project:nth-child(1) {
+    background: url('images/animeQuiz.png') no-repeat center center;
+    background-size: cover;  
+}
+/*========== PROJECTS 2024 ==============*/
 .projects__2024 .project:nth-child(1){
     background: url('images/btc_2024.jpg') no-repeat center center;
     background-size: cover;  /* Scales the image to cover the container */
@@ -509,6 +530,7 @@ body.no-scroll {
     background-size: cover;
 }
 
+/*========== PROJECTS 2023 ==============*/
 .projects__2023 .project:nth-child(1){
     background: url('images/sort_visualizer.gif') no-repeat center center;
     background-size: cover;
