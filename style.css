@@ -257,7 +257,6 @@ body.no-scroll {
     border: 1px solid var(--color-red);
 }
 
-
 .menu-overlay__box:nth-child(1) a:hover {
     border: 3px solid var(--color-blue);
     animation: questionMarkMotion 0.8s ease-in-out; 
@@ -502,9 +501,15 @@ body.no-scroll {
 
 /*========== PROJECTS 2025 ==============*/
 .projects__2025 .project:nth-child(1) {
+    background: url('images/routePlanner.png') no-repeat center center;
+    background-size: cover;  
+}
+
+.projects__2025 .project:nth-child(2) {
     background: url('images/animeQuiz.png') no-repeat center center;
     background-size: cover;  
 }
+
 /*========== PROJECTS 2024 ==============*/
 .projects__2024 .project:nth-child(1){
     background: url('images/btc_2024.jpg') no-repeat center center;
