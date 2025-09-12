@@ -501,11 +501,15 @@ body.no-scroll {
 
 /*========== PROJECTS 2025 ==============*/
 .projects__2025 .project:nth-child(1) {
+    background: url('images/photoVoltaic.png') no-repeat center center;
+    background-size: cover;  
+}
+.projects__2025 .project:nth-child(2) {
     background: url('images/routePlanner.png') no-repeat center center;
     background-size: cover;  
 }
 
-.projects__2025 .project:nth-child(2) {
+.projects__2025 .project:nth-child(3) {
     background: url('images/animeQuiz.png') no-repeat center center;
     background-size: cover;  
 }
